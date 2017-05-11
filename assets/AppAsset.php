@@ -16,8 +16,10 @@ use yii\web\AssetBundle;
 class AppAsset extends AssetBundle
 {
     public $sourcePath = '@webroot/src';
+//    public $basePath = '@webroot/src';
+//    public $baseUrl = '@web';
     public $css = [
-        'css/site.css',
+        'dist/css/site.css',
         'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css',
         'https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css',
         'dist/css/AdminLTE.min.css',
