@@ -19,20 +19,20 @@ class AppAsset extends AssetBundle
 //    public $basePath = '@webroot/src';
 //    public $baseUrl = '@web';
     public $css = [
-        'dist/css/site.css',
+        'app/css/site.css',
         'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css',
         'https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css',
-        'dist/css/AdminLTE.min.css',
-        'dist/css/skins/_all-skins.min.css'
+        'admin_lte/dist/css/AdminLTE.min.css',
+        'admin_lte/dist/css/skins/_all-skins.min.css'
     ];
     public $js = [
         'https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js',
         'https://oss.maxcdn.com/respond/1.4.2/respond.min.js',
-        'bootstrap/js/bootstrap.min.js',
-        'plugins/slimScroll/jquery.slimscroll.min.js',
-        'plugins/fastclick/fastclick.js',
-        'dist/js/app.min.js',
-        'dist/js/demo.js'
+        'admin_lte/bootstrap/js/bootstrap.min.js',
+        'admin_lte/plugins/slimScroll/jquery.slimscroll.min.js',
+        'admin_lte/plugins/fastclick/fastclick.js',
+        'admin_lte/dist/js/app.min.js',
+        'admin_lte/dist/js/demo.js'
     ];
     public $depends = [
         'yii\web\YiiAsset',
