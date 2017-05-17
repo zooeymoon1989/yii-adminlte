@@ -2,6 +2,8 @@
 
 namespace app\models;
 
+use yii\db\ActiveRecord;
+use yii\db\Expression;
 use Yii;
 
 /**
@@ -39,6 +41,20 @@ class Menu extends \yii\db\ActiveRecord
             [['create_time', 'update_time'], 'safe'],
             [['name', 'icon'], 'string', 'max' => 50],
             [['url'], 'string', 'max' => 100],
+        ];
+    }
+
+    public function behaviors()
+    {
+        return [
+            'timestamp' => [
+                'class' => 'yii\behaviors\TimestampBehavior',
+                'attributes' => [
+                    ActiveRecord::EVENT_BEFORE_INSERT => ['create_at', 'update_at'],
+                    ActiveRecord::EVENT_BEFORE_UPDATE => ['update_at'],
+                ],
+                'value' => new Expression('NOW()'),
+            ],
         ];
     }
 

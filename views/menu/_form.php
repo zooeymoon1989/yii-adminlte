@@ -20,15 +20,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'icon')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'is_show')->textInput() ?>
-
-    <?= $form->field($model, 'create_time')->textInput() ?>
-
-    <?= $form->field($model, 'create_name')->textInput() ?>
-
-    <?= $form->field($model, 'update_time')->textInput() ?>
-
-    <?= $form->field($model, 'update_name')->textInput() ?>
+    <?= $form->field($model, 'is_show')->checkbox(['class'=>'minimal']) ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
@@ -37,3 +29,25 @@ use yii\widgets\ActiveForm;
     <?php ActiveForm::end(); ?>
 
 </div>
+
+<?php
+
+    $js = <<<js
+    //iCheck for checkbox and radio inputs
+    $('input[type="checkbox"].minimal').iCheck({
+      checkboxClass: 'icheckbox_minimal-blue'
+    });
+
+js;
+
+$this->registerCssFile('/src/admin_lte/plugins/iCheck/all.css');//引入icheck的CSS文件
+//引入icheck的JS文件
+$this->registerJsFile('/src/admin_lte/plugins/iCheck/icheck.min.js',
+    ['depends'=>
+        [
+            'yii\web\YiiAsset',
+            'yii\bootstrap\BootstrapAsset'
+        ],'position'=>\yii\web\View::POS_END
+    ]);
+$this->registerJs($js);
+?>
